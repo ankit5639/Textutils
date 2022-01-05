@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-// import { About } from "./component/About";
+import { About } from "./component/About";
 import Navbar from "./component/Navbar";
 import Alert from "./component/Alert";
 import { TextForm } from "./component/textForm";
 
-// import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 const App = () => {
   const [alert, setAlert] = useState(null);
@@ -47,21 +47,21 @@ const App = () => {
     <>
       {/* <Navbar title="TextUtils" aboutText="About TextUtils" /> */}
       {/* <Navbar/> */}
-      {/* <Router> */}
-      <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} />
+      <Router>
+        <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} />
 
-      <Alert alert={alert} />
+        <Alert alert={alert} />
 
-      <div className="container my-3">
-        <TextForm
+        <div className="container my-3">
+          {/* <TextForm
           showAlert={showAlert}
           heading="Enter the text to analyze below"
           mode={mode}
-        />
-        {/* <Switch> */}
-        {/* /users --> Component 1
+        /> */}
+          <Switch>
+            {/* /users --> Component 1
         /users/home --> Component 2 */}
-        {/* <Route exact path="/about">
+            <Route exact path="/about">
               <About />
             </Route>
             <Route exact path="/">
@@ -71,9 +71,9 @@ const App = () => {
                 mode={mode}
               />
             </Route>
-          </Switch> */}
-      </div>
-      {/* </Router> */}
+          </Switch>
+        </div>
+      </Router>
     </>
   );
 };
