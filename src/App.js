@@ -26,7 +26,7 @@ const App = () => {
       setmode("dark");
       document.body.style.backgroundColor = "#042743";
       showAlert("light mode has been enabled", "success");
-      document.title = "Textutils - Dark Mode";
+      // document.title = "Textutils - Dark Mode";
 
       // setInterval(()=>{
       //   document.title = "Textutils is amaZing"
@@ -39,7 +39,7 @@ const App = () => {
       setmode("light");
       document.body.style.backgroundColor = "white";
       showAlert("dark mode has been enabled", "success");
-      document.title = "Textutils - Light Mode";
+      // document.title = "Textutils - Light Mode";
     }
   };
 
@@ -62,7 +62,7 @@ const App = () => {
             {/* /users --> Component 1
         /users/home --> Component 2 */}
             <Route exact path="/about">
-              <About />
+              <About mode={mode} />
             </Route>
             <Route exact path="/">
               <TextForm
